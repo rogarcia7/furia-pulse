@@ -1,24 +1,23 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 
-// Verifica se o usuário está autenticado
 const isAuthenticated = () => {
   const user = localStorage.getItem('user');
-  return user ? true : false;  // Se o usuário estiver no localStorage, considera como autenticado
+  return user ? true : false; 
 };
 
 interface PrivateRouteProps {
-  element: React.ReactNode; // Espera que o `element` seja do tipo React.ReactNode
+  element: React.ReactNode;
 }
 
 const PrivateRoute: React.FC<PrivateRouteProps> = ({ element }) => {
-  const isAuth = isAuthenticated();  // Verificar se o usuário está autenticado
+  const isAuth = isAuthenticated();
 
   if (!isAuth) {
-    return <Navigate to="/login" />;  // Se não estiver autenticado, redireciona para o login
+    return <Navigate to="/login" />; 
   }
 
-  return <>{element}</>;  // Se estiver autenticado, renderiza o componente
+  return <>{element}</>;
 };
 
 export default PrivateRoute;

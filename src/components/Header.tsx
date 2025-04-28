@@ -8,7 +8,6 @@ export default function Header() {
   const navigate = useNavigate();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  // Atualiza o estado baseado no Firebase
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setIsAuthenticated(!!user);
@@ -29,7 +28,6 @@ export default function Header() {
   };
 
   const handleProfile = () => {
-    // Redireciona para a página de perfil
     navigate('/perfil');
   };
 

@@ -1,4 +1,3 @@
-// src/components/Footer.tsx
 import './Footer.css';
 
 export default function Footer() {
@@ -7,7 +6,7 @@ export default function Footer() {
       <p className="text-xl">&copy; 2025 FURIA Pulse. Todos os direitos reservados ao player @kntrizz.</p>
       <p className="text-lg mt-2">Este site faz parte do projeto FURIA Know Your Fans.</p>
       <div className="flex justify-center space-x-8">
-        {/* Links podem ser adicionados aqui, se necessário */}
+        
       </div>
     </footer>
   );

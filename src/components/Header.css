@@ -1,4 +1,3 @@
-/* Header.css */
 @keyframes textHighlight {
     0% {
       background-position: 100% 0;
@@ -10,11 +9,11 @@
   
   .animate-textHighlight {
     background: linear-gradient(90deg, #ffffff 0%, #d4af37 50%, #ffffff 100%);
-    background-size: 200% 100%; /* Ajuste o tamanho do gradiente */
-    background-position: 100% 0; /* Começo do gradiente fora da tela */
+    background-size: 200% 100%;
+    background-position: 100% 0;
     -webkit-background-clip: text;
-    color: transparent; /* Deixa o texto transparente para o gradiente aparecer */
-    animation: textHighlight 3s infinite linear; /* Animação suave e contínua */
+    color: transparent; 
+    animation: textHighlight 3s infinite linear;
   }
 
   @keyframes pulse {
@@ -22,13 +21,13 @@
       transform: scale(1);
     }
     50% {
-      transform: scale(1.1); /* Aumenta um pouco */
+      transform: scale(1.1);
     }
     100% {
-      transform: scale(1); /* Retorna ao tamanho original */
+      transform: scale(1); 
     }
   }
   
   .pulse-logo {
-    animation: pulse 2s infinite ease-in-out; /* Animação suave e infinita */
+    animation: pulse 2s infinite ease-in-out; 
   }

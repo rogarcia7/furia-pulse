@@ -22,18 +22,18 @@ const OutrosTorcedores = () => {
   }, []);
 
   const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % torcedores.length); // Navegação infinita
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % torcedores.length); 
   };
 
   const goToPrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + torcedores.length) % torcedores.length); // Navegação infinita
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + torcedores.length) % torcedores.length); 
   };
 
   return (
     <div className="w-full h-screen bg-black flex items-center justify-center relative">
       {torcedores.length > 0 ? (
         <div className="relative w-[80vw] h-[80vh] flex items-center justify-center bg-black/70 rounded-xl shadow-xl">
-          {/* Botão de Voltar */}
+          
           <button
             onClick={goToPrev}
             className="absolute left-4 text-white text-4xl font-bold hover:scale-110 transition"
@@ -41,7 +41,7 @@ const OutrosTorcedores = () => {
             &#60;
           </button>
 
-          {/* Card com animação */}
+          
           <motion.div
             key={currentIndex}
             initial={{ opacity: 0, x: -100 }}
@@ -63,7 +63,7 @@ const OutrosTorcedores = () => {
             />
           </motion.div>
 
-          {/* Botão de Avançar */}
+          
           <button
             onClick={goToNext}
             className="absolute right-4 text-white text-4xl font-bold hover:scale-110 transition"

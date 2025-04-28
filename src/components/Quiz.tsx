@@ -22,7 +22,7 @@ const Quiz: React.FC = () => {
     twitter: '',
     tiktok: '',
     youtube: '',
-    fotoPersonalizada: '', // NOVO campo para imagem
+    fotoPersonalizada: '',
   });
 
   const [perfil, setPerfil] = useState<string>('');
@@ -103,7 +103,7 @@ const Quiz: React.FC = () => {
         timestamp: new Date(),
         perfil: {
           nome: user.displayName || 'Desconhecido',
-          foto: formData.fotoPersonalizada || user.photoURL || '', // Foto personalizada primeiro
+          foto: formData.fotoPersonalizada || user.photoURL || '',
         },
       });
 
@@ -164,7 +164,7 @@ const Quiz: React.FC = () => {
           { name: 'twitter', placeholder: '@ do Twitter (opcional)' },
           { name: 'tiktok', placeholder: '@ do TikTok (opcional)' },
           { name: 'youtube', placeholder: '@ do YouTube (opcional)' },
-          { name: 'fotoPersonalizada', placeholder: 'URL da sua foto de perfil (opcional)' }, // NOVO input
+          { name: 'fotoPersonalizada', placeholder: 'URL da sua foto de perfil (opcional)' },
         ].map(({ name, placeholder, required }) => (
           <input
             key={name}

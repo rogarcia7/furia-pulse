@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore"; // <- IMPORTANTE
-import { getStorage } from "firebase/storage"; // Adiciona o Firebase Storage
+import { getStorage } from "firebase/storage";
 
 // Configuração do Firebase
 const firebaseConfig = {
@@ -14,10 +14,7 @@ const firebaseConfig = {
   measurementId: "G-XJNN5ZT7HN"
 };
 
-// Inicializa o Firebase
 const app = initializeApp(firebaseConfig);
-
-// Inicializa a autenticação, o provedor do Google e o Firestore
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 const db = getFirestore(app); // <- AQUI ESTÁ O BANCO

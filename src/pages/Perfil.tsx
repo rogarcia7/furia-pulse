@@ -171,7 +171,6 @@ export default function Perfil() {
             )}
           </div>
   
-          {/* BOTÃO DE EDITAR PERFIL */}
           <div className="mt-10 text-center">
             <a
               href="/editarperfil"

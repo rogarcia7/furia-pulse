@@ -1,5 +1,3 @@
-/* src/components/Footer.css */
-
 footer {
     background-color: #111;
     color: #fff;
@@ -13,8 +11,8 @@ footer {
   }
   
   footer a:hover {
-    color: #ffcc00; /* Cor dourada */
+    color: #ffcc00; 
   }
   
-  /* Pode ser interessante adicionar um efeito de transição suave nos links */
+  
   

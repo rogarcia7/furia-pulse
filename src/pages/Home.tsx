@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Header from "../components/Header"; // Verifique o caminho correto
-import Footer from "../components/Footer"; // Verifique o caminho correto
 
 const Home: React.FC = () => {
   const images = [
@@ -78,8 +76,6 @@ const Home: React.FC = () => {
           </div>
         </section>
       </main>
-
-      {/* Renderizando o Footer */}
     </div>
   );
 };
