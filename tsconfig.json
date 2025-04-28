@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "jsx": "react", // Se estiver usando React 16 ou anterior
+    "target": "es6",  // Modificado de "es5" para "es6"
     "lib": [
       "dom",
       "dom.iterable",
@@ -8,6 +9,7 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
+    "skipDefaultLibCheck": true,  // Adicionado para evitar problemas com bibliotecas
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
