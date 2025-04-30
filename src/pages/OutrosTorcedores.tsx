@@ -53,7 +53,7 @@ const OutrosTorcedores = () => {
             <TorcedorCard
               nomeReal={torcedores[currentIndex]?.nome}
               nickname={torcedores[currentIndex]?.nickname}
-              fotoPerfil={torcedores[currentIndex]?.foto}
+              fotoPerfil={torcedores[currentIndex]?.perfil.foto}
               redesSociais={{
                 instagram: torcedores[currentIndex]?.instagram,
                 twitter: torcedores[currentIndex]?.twitter,
