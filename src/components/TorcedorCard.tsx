@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { use } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface RedesSociais {
   instagram?: string;
@@ -12,6 +13,7 @@ interface TorcedorCardProps {
   nickname: string;
   fotoPerfil: string | null;
   redesSociais: RedesSociais;
+  userId: string;
 }
 
 const TorcedorCard: React.FC<TorcedorCardProps> = ({
@@ -19,13 +21,28 @@ const TorcedorCard: React.FC<TorcedorCardProps> = ({
   nickname,
   fotoPerfil,
   redesSociais,
+  userId,
 }) => {
   const fallbackImage = 'https://png.pngtree.com/png-vector/20191009/ourmid/pngtree-user-icon-png-image_1796659.jpg';
+
+  const navigate = useNavigate(); // Inicializando o navigate
 
   const fotoUrl = fotoPerfil && fotoPerfil.startsWith('http') ? fotoPerfil : fallbackImage;
 
   const formatarUsername = (username: string) => {
     return username.startsWith('@') ? username.slice(1) : username;
+  };
+
+  const handleEnviarMensagem = () => {
+    navigate('/chat', {
+      state: {
+        destinatario: {
+          userId: userId,
+          nome: nomeReal,
+          foto: fotoPerfil || fallbackImage,
+        },
+      },
+    });
   };
 
   return (
@@ -82,6 +99,14 @@ const TorcedorCard: React.FC<TorcedorCardProps> = ({
           </a>
         )}
       </div>
+      {/* Botão para enviar mensagem */}
+      <button
+        onClick={handleEnviarMensagem}
+        className="mt-6 bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-full transition"
+      >
+        Enviar Mensagem
+      </button>
+
     </div>
   );
 };

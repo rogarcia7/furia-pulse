@@ -13,7 +13,7 @@ const OutrosTorcedores = () => {
       const querySnapshot = await getDocs(collection(db, 'respostasQuiz'));
       const torcedoresData: any[] = [];
       querySnapshot.forEach((doc) => {
-        torcedoresData.push(doc.data());
+        torcedoresData.push({ ...doc.data(), userId: doc.id });
       });
       setTorcedores(torcedoresData);
     };
@@ -51,9 +51,10 @@ const OutrosTorcedores = () => {
             className="w-full max-w-[600px] h-full flex items-center justify-center"
           >
             <TorcedorCard
-              nomeReal={torcedores[currentIndex]?.nome}
+              nomeReal={torcedores[currentIndex]?.perfil.nome}
               nickname={torcedores[currentIndex]?.nickname}
               fotoPerfil={torcedores[currentIndex]?.perfil.foto}
+              userId={torcedores[currentIndex]?.userId}
               redesSociais={{
                 instagram: torcedores[currentIndex]?.instagram,
                 twitter: torcedores[currentIndex]?.twitter,
