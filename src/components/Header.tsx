@@ -40,7 +40,7 @@ export default function Header() {
       <nav className="flex space-x-8 text-3xl">
         <a href="/" className="hover:text-yellow-400 transition">Home</a>
         <a href="/outros-torcedores" className="hover:text-yellow-400 transition">Outros Torcedores</a>
-        <a href="/chat" className="hover:text-yellow-400 transition">Chat</a>
+        <a href="/descontos" className="hover:text-yellow-400 transition">Descontos Furiosos</a>
       </nav>
       <div className="absolute right-4 top-4">
         {isAuthenticated ? (

@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import OutrosTorcedores from './pages/OutrosTorcedores';
-import ChatTorcedores from './pages/ChatTorcedores';
+import DescontosFuriosos from './pages/DescontosFruiosos';
 import Login from './pages/Login';
 import Quiz from './components/Quiz';
 import Perfil from './pages/Perfil';
@@ -22,7 +22,7 @@ export default function App() {
           element={<PrivateRoute element={<OutrosTorcedores />} />}
         />
         
-        <Route path="/chat" element={<ChatTorcedores />} />
+        <Route path="/descontos" element={<DescontosFuriosos />} />
         <Route path="/login" element={<Login />} />
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/perfil" element={<Perfil />} />
