@@ -34,14 +34,12 @@ export default function Header() {
   return (
     <header className="bg-black text-white py-3 md:py-4 px-4 md:px-6 flex flex-col items-center justify-center relative shadow-2xl">
       <div className="flex items-center space-x-6 mb-6 animate-fade-in">
-        {/* Logo FURIA - Animação de Pulsação */}
         <img
           src={furiaLogo}
           alt="FURIA Logo"
           className="furia-logo h-16 md:h-20 animate-pulseLogo"
         />
 
-        {/* Título FURIA Pulse com efeito dourado tipo "trilho" */}
         <h1 className="text-4xl md:text-5xl font-extrabold animate-golden-shine bg-clip-text text-transparent bg-gradient-to-r from-white via-yellow-400 to-white bg-[length:200%_auto] animate-backgroundMove">
           FURIA Pulse
         </h1>
@@ -53,7 +51,6 @@ export default function Header() {
         <a href="/descontos" className="text-gray-200 hover:text-yellow-500 transition-all duration-300 transform hover:scale-105">Descontos Furiosos</a>
       </nav>
 
-      {/* Botões Login / Perfil / Logout estilizados */}
       <div className="flex items-center justify-end w-full absolute right-6 top-1/2 -translate-y-1/2 gap-3">
         {isAuthenticated ? (
           <>

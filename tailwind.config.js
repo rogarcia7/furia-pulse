@@ -9,13 +9,13 @@ module.exports = {
         sans: ['Russo One', 'sans-serif'],
       },
       colors: {
-        gold: '#FFD700', // Cor dourada
+        gold: '#FFD700', 
       },
       animation: {
         'fade-in': 'fadeIn 1s ease-out',
         'fade-in-delay': 'fadeIn 1.5s ease-out',
         'slide-up': 'slideUp 1s ease-out',
-        'textHighlight': 'textHighlight 3s linear infinite', // Corrigindo animação do texto
+        'textHighlight': 'textHighlight 3s linear infinite', 
       },
       keyframes: {
         fadeIn: {
