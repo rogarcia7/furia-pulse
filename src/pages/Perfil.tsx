@@ -82,7 +82,7 @@ export default function Perfil() {
 
   const perfil = gerarPerfil(userData);
 
-  const RedeSocial = ({ icon: Icon, nome, user, url, gradient }: any) => (
+  const RedeSocial = ({ icon: Icon, user, url, gradient }: any) => (
     <a
       href={url}
       target="_blank"

@@ -32,28 +32,40 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-black text-white p-4 flex flex-col items-center justify-center relative">
-      <div className="flex items-center space-x-4 mb-4">
-        <img src={furiaLogo} alt="FURIA Logo" className="h-14 pulse-logo" />
-        <h1 className="text-5xl font-bold animate-textHighlight">FURIA Pulse</h1>
+    <header className="bg-black text-white py-3 md:py-4 px-4 md:px-6 flex flex-col items-center justify-center relative shadow-2xl">
+      <div className="flex items-center space-x-6 mb-6 animate-fade-in">
+        {/* Logo FURIA - Animação de Pulsação */}
+        <img
+          src={furiaLogo}
+          alt="FURIA Logo"
+          className="furia-logo h-16 md:h-20 animate-pulseLogo"
+        />
+
+        {/* Título FURIA Pulse com efeito dourado tipo "trilho" */}
+        <h1 className="text-4xl md:text-5xl font-extrabold animate-golden-shine bg-clip-text text-transparent bg-gradient-to-r from-white via-yellow-400 to-white bg-[length:200%_auto] animate-backgroundMove">
+          FURIA Pulse
+        </h1>
       </div>
-      <nav className="flex space-x-8 text-3xl">
-        <a href="/" className="hover:text-yellow-400 transition">Home</a>
-        <a href="/outros-torcedores" className="hover:text-yellow-400 transition">Outros Torcedores</a>
-        <a href="/descontos" className="hover:text-yellow-400 transition">Descontos Furiosos</a>
+
+      <nav className="flex space-x-10 text-2xl md:text-3xl mb-6">
+        <a href="/" className="text-gray-200 hover:text-yellow-500 transition-all duration-300 transform hover:scale-105">Home</a>
+        <a href="/outros-torcedores" className="text-gray-200 hover:text-yellow-500 transition-all duration-300 transform hover:scale-105">Outros Torcedores</a>
+        <a href="/descontos" className="text-gray-200 hover:text-yellow-500 transition-all duration-300 transform hover:scale-105">Descontos Furiosos</a>
       </nav>
-      <div className="absolute right-4 top-4">
+
+      {/* Botões Login / Perfil / Logout estilizados */}
+      <div className="flex items-center justify-end w-full absolute right-6 top-1/2 -translate-y-1/2 gap-3">
         {isAuthenticated ? (
           <>
             <button
               onClick={handleProfile}
-              className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition mr-4"
+              className="bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-500 hover:to-blue-300 text-white px-5 py-2.5 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 text-sm md:text-base"
             >
               Perfil
             </button>
             <button
               onClick={handleLogout}
-              className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded transition"
+              className="bg-gradient-to-r from-red-600 to-red-400 hover:from-red-500 hover:to-red-300 text-white px-5 py-2.5 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 text-sm md:text-base"
             >
               Logout
             </button>
@@ -61,7 +73,7 @@ export default function Header() {
         ) : (
           <button
             onClick={() => navigate('/login')}
-            className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded transition"
+            className="bg-gradient-to-r from-green-600 to-green-400 hover:from-green-500 hover:to-green-300 text-white px-5 py-2.5 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 text-sm md:text-base"
           >
             Login
           </button>

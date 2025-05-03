@@ -17,7 +17,7 @@ const DescontosFuriosos: React.FC = () => {
     cidade: '',
     estado: '',
     cep: '',
-    recebeDescontos: '',  // Para controlar a escolha do usuário (WhatsApp ou E-mail)
+    recebeDescontos: '',
   });
 
   const [loading, setLoading] = useState(false);
@@ -69,7 +69,6 @@ const DescontosFuriosos: React.FC = () => {
     setLoading(true);
 
     try {
-      // Envia os dados para o Firestore
       await addDoc(collection(db, 'descontosFuriosos'), {
         ...formData,
         timestamp: Timestamp.now(),
@@ -86,7 +85,7 @@ const DescontosFuriosos: React.FC = () => {
         cidade: '',
         estado: '',
         cep: '',
-        recebeDescontos: '', // Limpa o campo após envio
+        recebeDescontos: '',
       });
 
     } catch (err) {
@@ -108,25 +107,17 @@ const DescontosFuriosos: React.FC = () => {
         </p>
 
         <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {[{
-            name: 'nome', placeholder: 'Nome completo'
-          }, {
-            name: 'cpf', placeholder: 'CPF (somente números)'
-          }, {
-            name: 'email', placeholder: 'E-mail'
-          }, {
-            name: 'telefone', placeholder: 'Telefone'
-          }, {
-            name: 'rua', placeholder: 'Rua'
-          }, {
-            name: 'numero', placeholder: 'Número'
-          }, {
-            name: 'cidade', placeholder: 'Cidade'
-          }, {
-            name: 'estado', placeholder: 'Estado'
-          }, {
-            name: 'cep', placeholder: 'CEP'
-          }].map(({ name, placeholder }) => (
+          {[
+            { name: 'nome', placeholder: 'Nome completo' },
+            { name: 'cpf', placeholder: 'CPF (somente números)' },
+            { name: 'email', placeholder: 'E-mail' },
+            { name: 'telefone', placeholder: 'Telefone' },
+            { name: 'rua', placeholder: 'Rua' },
+            { name: 'numero', placeholder: 'Número' },
+            { name: 'cidade', placeholder: 'Cidade' },
+            { name: 'estado', placeholder: 'Estado' },
+            { name: 'cep', placeholder: 'CEP' },
+          ].map(({ name, placeholder }) => (
             <input
               key={name}
               type={name === 'email' ? 'email' : 'text'}
@@ -135,51 +126,53 @@ const DescontosFuriosos: React.FC = () => {
               value={formData[name as keyof typeof formData] || ''}
               onChange={handleChange}
               required
-              className="bg-zinc-700 text-white placeholder-zinc-400 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all"
+              className="bg-zinc-700 text-white placeholder-zinc-400 px-4 py-3 rounded-xl border border-zinc-600 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-500 outline-none transition-all shadow-sm hover:shadow-yellow-500/10"
             />
           ))}
 
-          {/* Checkbox para escolher como receber os descontos */}
           <div className="col-span-full">
             <label className="block text-yellow-400 mb-2">Como você gostaria de receber os descontos?</label>
-            <div className="flex items-center gap-4">
-              <label className="flex items-center gap-2 text-zinc-300">
+            <div className="flex items-center gap-6 mt-2">
+              <label className="flex items-center gap-2 text-zinc-300 cursor-pointer">
                 <input
                   type="checkbox"
                   value="whatsapp"
                   checked={formData.recebeDescontos === 'whatsapp'}
                   onChange={handleCheckboxChange}
-                  className="h-5 w-5"
+                  className="h-5 w-5 accent-yellow-400 cursor-pointer"
                 />
-                WhatsApp
+                <span className="hover:text-yellow-400 transition">WhatsApp</span>
               </label>
-              <label className="flex items-center gap-2 text-zinc-300">
+
+              <label className="flex items-center gap-2 text-zinc-300 cursor-pointer">
                 <input
                   type="checkbox"
                   value="email"
                   checked={formData.recebeDescontos === 'email'}
                   onChange={handleCheckboxChange}
-                  className="h-5 w-5"
+                  className="h-5 w-5 accent-yellow-400 cursor-pointer"
                 />
-                E-mail
+                <span className="hover:text-yellow-400 transition">E-mail</span>
               </label>
             </div>
           </div>
 
-          {/* Botão de envio */}
           <div className="col-span-full">
-            <button
+            <motion.button
               type="submit"
               disabled={loading}
-              className="w-full bg-yellow-500 text-black font-bold py-3 rounded-xl hover:bg-yellow-400 transition duration-300 shadow-md"
+              className="w-full bg-yellow-500 text-black font-extrabold py-3 rounded-xl shadow-lg hover:bg-yellow-400 hover:shadow-yellow-300 transition duration-300 text-lg tracking-wide"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
             >
-              {loading ? 'Enviando...' : 'Enviar Dados'}
-            </button>
+              {loading ? 'Enviando...' : '🚀 Enviar e Desbloquear'}
+            </motion.button>
           </div>
 
           {error && (
             <p className="col-span-full text-red-500 mt-2 text-center">{error}</p>
           )}
+
           {success && (
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -191,13 +184,22 @@ const DescontosFuriosos: React.FC = () => {
               <p className="text-xl mb-6">
                 UAU! Você acabou de desbloquear uma nova fase! Agora, conheça outros torcedores da FURIA e compartilhe a energia com a galera.
               </p>
-              <motion.button
-                onClick={() => navigate('/outros-torcedores')}
-                className="px-6 py-3 bg-black text-yellow-500 font-bold text-xl rounded-xl hover:bg-yellow-500 hover:text-black transition-all"
-                whileHover={{ scale: 1.1 }}
-              >
-                Conheça outros torcedores da FURIA!
-              </motion.button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <motion.button
+                  onClick={() => navigate('/outros-torcedores')}
+                  className="px-6 py-3 bg-black text-yellow-500 font-bold text-xl rounded-xl hover:bg-yellow-500 hover:text-black transition-all"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  Conheça outros torcedores
+                </motion.button>
+                <motion.button
+                  onClick={() => navigate('/descontos')}
+                  className="px-6 py-3 bg-black text-yellow-500 font-bold text-xl rounded-xl hover:bg-yellow-500 hover:text-black transition-all"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  Ver mais descontos
+                </motion.button>
+              </div>
             </motion.div>
           )}
         </form>

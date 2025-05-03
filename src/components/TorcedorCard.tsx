@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 interface RedesSociais {
@@ -21,49 +21,37 @@ const TorcedorCard: React.FC<TorcedorCardProps> = ({
   nickname,
   fotoPerfil,
   redesSociais,
-  userId,
 }) => {
   const fallbackImage = 'https://png.pngtree.com/png-vector/20191009/ourmid/pngtree-user-icon-png-image_1796659.jpg';
 
-  const navigate = useNavigate(); // Inicializando o navigate
+  const navigate = useNavigate();
 
   const fotoUrl = fotoPerfil && fotoPerfil.startsWith('http') ? fotoPerfil : fallbackImage;
 
   const formatarUsername = (username: string) => {
     return username.startsWith('@') ? username.slice(1) : username;
   };
-
-  const handleEnviarMensagem = () => {
-    navigate('/chat', {
-      state: {
-        destinatario: {
-          userId: userId,
-          nome: nomeReal,
-          foto: fotoPerfil || fallbackImage,
-        },
-      },
-    });
-  };
-
   return (
-    <div className="w-full h-full bg-white bg-opacity-90 rounded-xl p-6 flex flex-col items-center justify-center text-center shadow-xl">
+    <div className="w-full h-full bg-gradient-to-br from-[#0f0f0f] via-[#1e1e1e] to-[#121212] bg-opacity-90 rounded-3xl p-8 flex flex-col items-center justify-center text-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] transform transition-all duration-500 hover:scale-105 hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)] animate-fade-in">
       <img
         src={fotoUrl}
         alt="Foto do torcedor"
         referrerPolicy="no-referrer"
-        className="w-40 h-40 rounded-full object-cover border-4 border-black mb-4"
+        className="w-40 h-40 rounded-full object-cover border-4 border-yellow-400 shadow-lg transition-transform duration-500 hover:scale-110 hover:border-yellow-500"
       />
 
-      <h2 className="text-2xl font-bold">{nomeReal}</h2>
-      <p className="text-lg text-gray-600">@{nickname}</p>
+      <h2 className="text-3xl font-extrabold text-yellow-400 mt-4 tracking-wide animate-slide-up">
+        {nomeReal}
+      </h2>
+      <p className="text-lg text-gray-300 italic animate-fade-in-delay">@{nickname}</p>
 
-      <div className="mt-6 flex gap-4 flex-wrap justify-center">
+      <div className="mt-6 flex gap-3 flex-wrap justify-center animate-fade-in-delay">
         {redesSociais.instagram && (
           <a
             href={`https://www.instagram.com/${formatarUsername(redesSociais.instagram)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-full"
+            className="bg-gradient-to-r from-pink-500 to-pink-700 hover:brightness-110 text-white px-5 py-2 rounded-full shadow-md transition-all duration-300"
           >
             Instagram
           </a>
@@ -73,7 +61,7 @@ const TorcedorCard: React.FC<TorcedorCardProps> = ({
             href={`https://twitter.com/${formatarUsername(redesSociais.twitter)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full"
+            className="bg-gradient-to-r from-blue-500 to-blue-700 hover:brightness-110 text-white px-5 py-2 rounded-full shadow-md transition-all duration-300"
           >
             Twitter
           </a>
@@ -83,7 +71,7 @@ const TorcedorCard: React.FC<TorcedorCardProps> = ({
             href={`https://www.tiktok.com/@${formatarUsername(redesSociais.tiktok)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-black hover:bg-gray-800 text-white px-4 py-2 rounded-full"
+            className="bg-gradient-to-r from-black to-gray-800 hover:brightness-110 text-white px-5 py-2 rounded-full shadow-md transition-all duration-300"
           >
             TikTok
           </a>
@@ -93,22 +81,13 @@ const TorcedorCard: React.FC<TorcedorCardProps> = ({
             href={`https://www.youtube.com/@${formatarUsername(redesSociais.youtube)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-full"
+            className="bg-gradient-to-r from-red-600 to-red-800 hover:brightness-110 text-white px-5 py-2 rounded-full shadow-md transition-all duration-300"
           >
             YouTube
           </a>
         )}
       </div>
-      {/* Botão para enviar mensagem */}
-      <button
-        onClick={handleEnviarMensagem}
-        className="mt-6 bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-full transition"
-      >
-        Enviar Mensagem
-      </button>
-
     </div>
   );
 };
-
 export default TorcedorCard;

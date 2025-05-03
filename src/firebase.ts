@@ -3,7 +3,6 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore"; // <- IMPORTANTE
 import { getStorage } from "firebase/storage";
 
-// Configuração do Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyDgfV1EIvQDyj6ecFWgCOUEAtDHEI23BhA",
   authDomain: "furia-pulse.firebaseapp.com",
@@ -17,9 +16,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
-const db = getFirestore(app); // <- AQUI ESTÁ O BANCO
+const db = getFirestore(app); // <- banco ta aq
 
 // Inicializa o Firebase Storage
 const storage = getStorage(app);
 
-export { auth, provider, db, storage }; // Exporta o Storage
+export { auth, provider, db, storage }; // exportar o storage
