@@ -1,50 +1,76 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+# 🖤 FURIA Pulse
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**FURIA Pulse** é uma plataforma interativa criada especialmente para os fãs da FURIA. Desenvolvido como parte de um desafio da organização, o projeto une o melhor dos dois mundos propostos: conexão entre torcedores e um sistema que coleta e utiliza informações dos usuários para oferecer uma experiência personalizada e engajadora.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🧠 Sobre o Projeto
 
-### `npm start`
+Durante o processo, escolhi seguir o **Challenge #2 (HARD)**, mas acabei incorporando também elementos do **Challenge #1 (NORMAL)**. O resultado é uma fusão dos dois desafios: o usuário é convidado a criar um perfil, responder a um quiz, visualizar outros torcedores e se conectar com eles por meio de suas redes sociais.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🔥 Funcionalidades
 
-### `npm test`
+### 📋 Perfil do Torcedor
+- Coleta de dados como nome, nickname e redes sociais.
+- Upload de foto de perfil.
+- Resposta a quiz para mapear o tipo de fã.
+- Armazenamento e autenticação com Firebase.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🧑‍🤝‍🧑 Página de Outros Torcedores
+- Exibição de torcedores cadastrados (um por vez, estilo Tinder).
+- Card impactante ocupando quase a tela inteira.
+- Visualização de nome, nickname, foto e redes sociais.
 
-### `npm run build`
+### 💸 Descontos Furiosos
+- Página com cupons e promoções exclusivas para membros da comunidade.
+- Visual moderno e chamativo, com atualizações via Firestore.
+OBS: Por falta de conhecimento e tempo, acabei deixando essa bem simples, mas a idéia e expandior essa parte para de fato oferecer experiências e descontos ao usuários cadastrados.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📦 Tecnologias Utilizadas
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **React.js** – Front-end
+- **Tailwind CSS** – Estilização moderna e responsiva
+- **React Router** – Navegação entre páginas
+- **Framer Motion** – Animações fluidas
+- **Firebase** – Autenticação, Firestore e Hosting
+- **Vercel** – Deploy da aplicação
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 🗂️ Rodar o projeto:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## ⚙️ Como Rodar Localmente
 
-## Learn More
+1. Clone o repositório:
+git clone [https://github.com/seu-usuario/furia-pulse.git](https://github.com/rogarcia7/furia-pulse.git)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+cd furia-pulse
+npm install
+npm start
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-=======
-# furia-pulse
->>>>>>> 39f767621f7112d72b46e8a244e2de7d1bb79824
+OBS: VERIFIQUE SE VOCÊ TEM O NODE.JS INTALADO.
+
+
+📌 Observações Finais
+Este projeto é uma mescla intencional entre os dois desafios propostos pela FURIA. O objetivo foi criar uma experiência completa de engajamento para os fãs, com foco em conexão entre torcedores e conhecimento profundo do perfil de cada fã. Mesmo tendo escolhido o Challenge #2 como base, o resultado final aproveita ideias dos dois desafios para entregar mais valor.
+
+✍️ Autor
+Rodrigo Garcia (KN ou KNtrizz)
+💼 Aprendiz de TI • 👨‍💻 Desenvolvedor em formação
+📍 Indaiatuba-SP
+📞 (11) 94985-6646
+📧 ga.rodrigo2005@gmail.com
+💼 https://www.linkedin.com/in/rodrigo-garcia7/
+
+📜 Licença
+Este projeto é open source e está sob a licença MIT.
+
+Feito com 💜 e muita paixão pela FURIA e por GAMES.
+
+
